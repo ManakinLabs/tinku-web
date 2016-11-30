@@ -1,0 +1,531 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <!--<img alt="" class="img-responsive" style="max-height:40px; padding-top:10px;" src="/images/Logo-final.png"/>-->
+            <a ui-sref="default.index"><div class="tinkuLogo img-responsive" /></a>
+            <!--<a class="navbar-brand page-scroll" href="#page-top">Tinku</a>-->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://tinkublog.azurewebsites.net/">Blog</a>
+                </li>
+                <li>
+                    <a ui-sref="index.about">About</a>
+                </li>
+                <li>
+                    <a ui-sref="index.causes">Causes</a>
+                </li>
+                <!--<li>
+                    <a ui-sref="index.ongs">ONGs</a>
+                </li>-->
+                <li>
+                    <a ui-sref="index.events">Events</a>
+                </li>
+                <li>
+                    <a ui-sref="index.login">Login</a>
+                </li>
+            </ul>
+
+            <!--<div class="col-sm-6 col-md-6 pull-right">
+                <form class="navbar-form" role="search">
+                    <input class="search-header" type="search" name="search">
+                </form>
+            </div>-->
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<script>
+    (function($) {
+    "use strict"; // Start of use strict
+
+    // jQuery for page scrolling feature - requires jQuery Easing plugin
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    // Highlight the top nav as scrolling occurs
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 51
+    });
+
+    // Closes the Responsive Menu on Menu Item Click
+    $('.navbar-collapse ul li a').click(function() {
+        $('.navbar-toggle:visible').click();
+    });
+
+    // Offset for Main Navigation
+    $('#mainNav').affix({
+        offset: {
+            top: 100
+        }
+    })
+
+    // Initialize and Configure Scroll Reveal Animation
+    window.sr = ScrollReveal();
+    sr.reveal('.sr-icons', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px'
+    }, 200);
+    sr.reveal('.sr-button', {
+        duration: 1000,
+        delay: 200
+    });
+    sr.reveal('.sr-contact', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px'
+    }, 300);
+
+})(jQuery); // End of use strict
+
+</script>
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <!--<h1 id="homeHeading">A social network for impact</h1>-->
+            <h1>A social network for 
+                <span class="txt-rotate" data-period="2000" data-rotate='[ "impact.", "helping others.", "learning.", "sharing.", "fun!" ]'></span>
+            </h1>
+            <hr>
+
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                <form name="mainSearch" ng-submit="search()">
+                    <div class="input-group">
+                        <input ng-model="query" required type="search" class="form-control main-search-input input-lg" placeholder="Find your own way to help...">
+                        <span class="input-group-btn">
+                            <button class="main-search-btn btn-lg btn btn-default" type="submit">&nbsp;</button>
+                        </span>
+                    </div>
+                </form><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+
+        </div>
+    </div>
+</header>
+
+
+
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="hero-box">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">A social network for impact!</h2>
+                    <hr class="light">
+                    <p class="text-faded">Giving people the power to help and be helped in a direct, creative, and personalized way.<br/> Join the people in your comunity, and make impact your way, together! </p>
+                    <a ui-sref="index.login" class="page-scroll btn btn-rounded btn-default btn-xl sr-button">Sign up for free!</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-pattern pattern-bg-2"></div>
+    </div>
+</section>
+
+<!-- Why tinku -->
+<section id="whyTinku">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Why Tinku?</h2>
+                <hr class="primary">
+                <p>Because helping out people in your community should be easy. Because you should be able to help out the way that you want, and in the way that makes most sense to you. And because, in the process, you should be able to have fun and meet people with the same interests and motivations as you.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-child font-blue-alt sr-icons"></i><!--Change the color of the font using boostrap-->
+                    <h3>Causes</h3>
+                    <p class="text-muted">Support the causes you care the most, while having fun with your comunity. Make impact your way, guey!</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-globe font-green sr-icons"></i>
+                    <h3>Organizations</h3>
+                    <p class="text-muted">The organizations provide Tinku the needs they have.<br />Tinku makes this need visible to a broad group of people willing to help. People from our comunity gets together to fullfill this need.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-gears font-yellow sr-icons"></i>
+                    <h3>Events</h3>
+                    <p class="text-muted">Tinku provides a fun way to support the causes you care the most. Still cannot find the perfect event for you and your friends? Tinku helps you create your own way to help.<br/>Start making impact now!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section id="importance" class="bg-gray"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Why is this important?</h2>
+                <hr class="primary">
+                <p>We want to empower people to make a social impact in the way they prefer.</p>
+            </div>
+        </div>
+        <!--<div class="row">-->
+            <div id="stats">
+                <ul style="list-style: none;">
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 text-center">
+                                <div class="stat-box">
+                                    <p class="stat">5,000</p>
+                                    <p class="description">Students engaged in our programs each month</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 text-center">
+                                <div class="stat-box">
+                                    <p class="stat">93%</p>
+                                    <p class="description">Of students finish high school and go to college</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 text-center">
+                                <div class="stat-box">
+                                    <p class="stat">1.7 million</p>
+                                    <p class="description">Volunteer service hours contributed by students</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 text-center">
+                                <div class="stat-box">
+                                    <p class="stat">953</p>
+                                    <p class="description">Schools built in developing countries</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 text-center">
+                                <div class="stat-box">
+                                    <p class="stat">120,000+</p>
+                                    <p class="description">Children and adults attend schools every day</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 text-center">
+                                <div class="stat-box">
+                                    <p class="stat">1.6 million</p>
+                                    <p class="description">Volunteer work days contributed by community members</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <!--</div>-->
+    </div>
+</section>
+
+<script>
+    $(function() {
+        $('#stats').vTicker({
+		speed: 500,
+		pause: 3000,
+		showItems: 1,
+		animation: 'fade',
+		mousePause: true,
+		height: 100,
+		direction: 'up'
+		});
+    });
+
+    $(document).ready(function() {
+        /* Owl Carousel*/
+        $(".next").click(function () {
+            owl.trigger('owl.next');
+        });
+
+        $(".prev").click(function () {
+            owl.trigger('owl.prev');
+        });
+    });
+
+
+
+/* rotate text */
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #FFF }";
+  document.body.appendChild(css);
+};
+
+
+
+</script>
+
+<!-- Stats -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Featured Events -->
+<section id="featured"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Past events</h2>
+                <hr class="primary">
+                <p>Have fun while helping others. Impact your way!</p>
+            </div>
+
+            <wrap-owlcarousel class="owl-carousel  owl-featured-carousel slider-wrapper inverse arrows-outside carousel-wrapper"
+                                data-options="{ autoPlay: 3000,
+                                                lazyLoad: true,
+                                                items: 4,
+                                                navigation: false } ">
+
+                <div>
+                <div class="thumbnail-box-wrapper mrg5A">
+                    <div class="thumbnail-box">
+                    <a class="thumb-link" href="/#/event/1" title=""></a>
+                    <div class="thumb-content">
+                        <div class="center-vertical">
+                        <div class="center-content">
+                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="thumb-overlay bg-black"></div>
+                    <img src="/images/events/1.jpg" alt="">
+                    </div>
+                    <div class="thumb-pane">
+                    <h3 class="thumb-heading animated rollIn">
+                        <a href="/#/event/1" title="">
+                        The ELIMINATE Soccer Cup
+                        </a>
+                        <small>January 01, 2017</small>
+                    </h3>
+                    </div>
+                </div>
+                </div>
+                <div>
+                <div class="thumbnail-box-wrapper mrg5A">
+                    <div class="thumbnail-box">
+                    <a class="thumb-link" href="/#/event/2" title=""></a>
+                    <div class="thumb-content">
+                        <div class="center-vertical">
+                        <div class="center-content">
+                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="thumb-overlay bg-black"></div>
+                    <img src="/images/events/2.jpg" alt="">
+                    </div>
+                    <div class="thumb-pane">
+                    <h3 class="thumb-heading animated rollIn">
+                        <a href="/#/event/2" title="">
+                        Concert!
+                        </a>
+                        <small>January 01, 2017</small>
+                    </h3>
+                    </div>
+                </div>
+                </div>
+                <div>
+                <div class="thumbnail-box-wrapper mrg5A">
+                    <div class="thumbnail-box">
+                    <a class="thumb-link" href="/#/event/3" title=""></a>
+                    <div class="thumb-content">
+                        <div class="center-vertical">
+                        <div class="center-content">
+                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="thumb-overlay bg-black"></div>
+                    <img src="/images/events/3.jpg" alt="">
+                    </div>
+                    <div class="thumb-pane">
+                    <h3 class="thumb-heading animated rollIn">
+                        <a href="/#/event/3" title="">
+                        Let's Dance
+                        </a>
+                        <small>January 01, 2017</small>
+                    </h3>
+                    </div>
+                </div>
+                </div>
+                <div>
+                <div class="thumbnail-box-wrapper mrg5A">
+                    <div class="thumbnail-box">
+                    <a class="thumb-link" href="/#/event/4" title=""></a>
+                    <div class="thumb-content">
+                        <div class="center-vertical">
+                        <div class="center-content">
+                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="thumb-overlay bg-black"></div>
+                    <img src="/images/events/4.jpg" alt="">
+                    </div>
+                    <div class="thumb-pane">
+                    <h3 class="thumb-heading animated rollIn">
+                        <a href="/#/event/" title="">
+                        The Best Passage!
+                        </a>
+                        <small>January 01, 2017</small>
+                    </h3>
+                    </div>
+                </div>
+                </div>
+                <div>
+                <div class="thumbnail-box-wrapper mrg5A">
+                    <div class="thumbnail-box">
+                    <a class="thumb-link" href="/#/event/5" title=""></a>
+                    <div class="thumb-content">
+                        <div class="center-vertical">
+                        <div class="center-content">
+                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="thumb-overlay bg-black"></div>
+                    <img src="/images/events/5.jpg" alt="">
+                    </div>
+                    <div class="thumb-pane">
+                    <h3 class="thumb-heading animated rollIn">
+                        <a href="/#/event/5" title="">
+                        Working in the morning
+                        </a>
+                        <small>January 01, 2017</small>
+                    </h3>
+                    </div>
+                </div>
+                </div>
+                <div>
+                <div class="thumbnail-box-wrapper mrg5A">
+                    <div class="thumbnail-box">
+                    <a class="thumb-link" href="/#/event/6" title=""></a>
+                    <div class="thumb-content">
+                        <div class="center-vertical">
+                        <div class="center-content">
+                            <i class="icon-helper icon-center animated zoomInUp font-white glyph-icon icon-linecons-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="thumb-overlay bg-black"></div>
+                    <img src="/images/events/6.jpg" alt="">
+                    </div>
+                    <div class="thumb-pane">
+                    <h3 class="thumb-heading animated rollIn">
+                        <a href="/#/event/6" title="">
+                        Bike-a-thon!
+                        </a>
+                        <small>January 01, 2017</small>
+                    </h3>
+                    </div>
+                </div>
+                </div>
+
+            </wrap-owlcarousel>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Events -->
+<!-- Sign Up Now -->
+<div class="signup-section bg-gray">
+    <div class="container">
+        <div class="hero-box">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Get started!</h2>
+                    <hr/>
+                    <p>Hundreds of people in your comunity are making impact their way, now!</p>
+                    <a href="#signup" class="btn btn-rounded btn-warning btn-xl">Sign up for free!</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-pattern pattern-bg-2"></div>
+    </div>
+</div>
+
+
+<!-- Sign Up Now -->
+
+
+<div ui-view="footer" style="height: auto;"></div>

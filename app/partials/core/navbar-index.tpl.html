@@ -1,0 +1,51 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix" ng-controller="SearchNavbarCtrl">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <!--<img alt="" class="img-responsive" style="max-height:40px; padding-top:10px;" src="/images/Logo-final.png"/>-->
+             <a ui-sref="default.index"><div class="tinkuLogo img-responsive" /></a>
+            <!--<a class="navbar-brand page-scroll" href="#page-top">Tinku</a>-->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://tinkublog.azurewebsites.net/">Blog</a>
+                </li>
+                <li>
+                    <a ui-sref="index.about">About</a>
+                </li>
+                <li>
+                    <a ui-sref="index.causes">Causes</a>
+                </li>
+                <!--<li>
+                    <a ui-sref="index.ongs">ONGs</a>
+                </li>-->
+                <li>
+                    <a ui-sref="index.events">Events</a>
+                </li>
+                <li>
+                    <a ui-sref="index.login">Login</a>
+                </li>
+            </ul>
+
+            <div class="col-sm-12 col-md-6 pull-right">
+                <form class="navbar-form search-form" role="search">
+                    <div class="form-group has-feedback" style="width:100%;">
+                        <label for="search" class="sr-only">Search</label>
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        <input type="search" class="form-control" name="search" id="search" ng-model="query" placeholder="search" ng-model-options="{ debounce: 250 }" ng-change="update()" style="width:100%;">
+                        
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>

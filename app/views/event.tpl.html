@@ -1,0 +1,112 @@
+<div class="bg-image">
+    <img ng-src="{{event.img}}" style="z-index:-1;">
+</div>
+<div class="event">
+    <div class="row">
+        <!-- Calendar date -->
+        <div class="col-xs-2 col-md-2" style="padding:0;">
+            <div class="rating" style="height:158px;">
+                <i>{{ event.date | date : 'dd'}}</i>
+                <i>{{ event.date | date : 'MMM'}}</i>
+                
+                <div>
+                    <span class="fa fa-thumbs-up fa-2x"></span>
+                    <span class="fa fa-thumbs-down fa-2x"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Event header -->
+        <div class="col-xs-8 col-md-7">
+            <div class="col-xs-12 col-md-8 event-header">
+                <h1>{{event.name}}</h1>
+                <span class="text-muted glyphicon glyphicon-time" aria-hidden="true"></span> {{event.date | date: 'EEEE'}}, {{event.date | date: 'longDate'}} at {{event.date | date: 'shortTime'}}<br/>
+                <span class="text-muted glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{event.location}}
+            </div>
+            <div class="col-md-4 text-center" style="padding-top: 50px;">
+                <a ui-sref="index.login" class="btn btn-warning btn-lg active" role="button"> <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Count me in!</a>
+            </div>
+        </div>
+        <!-- Need Info -->
+        <div class="col-xs-2 col-md-3 author">
+            <div class="col-xs-12 col-md-3 profile-image">
+                <img src="/images/needs/1.jpg"/>
+            </div>
+            <div class="profile hidden-xs col-md-9">
+                <strong>{{event.need}}</strong><!-- TODO: Change the controller to retrieve data from the need and causes -->
+                <article>With The Eliminate Project, Kiwanis International and UNICEF have joined forces to eliminate maternal and neonatal tetanus. </article>
+                <div class="links hidden-sm">
+                    <i class="fa fa-github-square fa-2x col-xs-3 col-md-3"></i>
+                    <i class="fa fa-google-plus-square fa-2x col-xs-3 col-md-3"></i>
+                    <i class="fa fa-facebook-square fa-2x col-xs-3 col-md-3"></i>
+                    <i class="fa fa-linkedin-square  fa-2x col-xs-3 col-md-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-9">
+        <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-tabs nav-stacked nav-pills" role="tablist">
+                <li ng-class="{'active': view_tab == 'tab1'}">
+                    <a class="btn-link" ng-click="changeTab('tab1')" href=""><i class="muted-text fa fa-map-o fa-2"></i> &nbsp Location</a>
+                </li>
+                <li ng-class="{'active': view_tab == 'tab2'}">
+                    <a class="btn-link" ng-click="changeTab('tab2')" href="" >&nbsp<i class="muted-text fa fa-info fa-2"></i> &nbsp Event Info</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <div class="tab-content">
+                <div ng-show="view_tab == 'tab1'">
+                    <ng-map zoom="17">
+                        <marker position="{{event.location}}"
+                        title="{{event.name}}"
+                        animation="Animation.BOUNCE"
+                        centered="true"></marker>
+                    </ng-map>
+                    <div class="pull-right">
+                        {{event.location}}
+                    </div>
+                </div>
+                <div ng-show="view_tab == 'tab2'">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading">
+                            <h1 class="featurette-heading panel-title" style="text-transform: none">Who are<span class="text-muted"> we helping?</span></h1>
+                        </div>
+                        <div class="panel-body">
+                            <p>{{event.description}}</p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">   
+                        <div class="panel-heading">
+                            <h1 class="featurette-heading panel-title" style="text-transform: none">What are<span class="text-muted">  we doing?</span></h1>
+                        </div>
+                        <div class="panel-body">
+                            <p>{{event.target}}</p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 class="featurette-heading panel-title" style="text-transform: none">What do we need<span class="text-muted"> from you?</span></h1>
+                        </div>
+                        <div class="panel-body">
+                            <p>{{event.goal}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+        </div>
+        
+        <div class="hidden-xs col-md-3 author">
+            
+        </div>
+    </div>
+</div>

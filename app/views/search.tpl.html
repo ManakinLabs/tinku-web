@@ -1,0 +1,48 @@
+<div class="container col-md-offset-1 col-md-10" style="padding-top:60px;">
+
+    <hgroup class="mb20">
+		<h1>Search Results</h1>
+		<h2 class="lead"><strong class="text-danger">{{(searchResults|searchFilter:query).length}}</strong> results were found for the search for <strong class="text-danger">{{query}}</strong></h2>								
+	</hgroup>
+
+    <div class="row">
+		<div class="col-xs-12 col-md-offset-1 col-md-10">
+			<ul class="event-list">
+				<li ng-repeat="item in searchResults|searchFilter:query">
+					<div style="position:relative;">
+						<span class="label pull-left" style="position:absolute; top:2px; left:2px;" ng-class="{ 'label-success': item.type=='event', 'label-warning': item.type=='need', 'label-primary': item.type=='ong', 'label-info': item.type=='cause' }">{{item.type}}</span>
+						<time datetime="{{item.date}}" class="{{item.type}}">
+							<span class="day">{{ item.date | date : 'dd'}}</span>
+							<span class="month">{{ item.date | date : 'MMM'}}</span>
+							<span class="year">{{ item.date | date : 'yyyy'}}</span>
+							<span class="time">{{ item.date | date : 'shortTime'}}</span>
+							<span class="day" ng-show="{{item.date==''}}">{{ item.type.charAt(0).toLowerCase()}}</span>
+						</time>
+					</div>
+					<a ui-sref="index.{{item.type}}({id: {{item.id}} })" title="{{item.type}}">
+						<img ng-src="{{item.img}}" alt="{{item.type}}" />
+					</a>
+
+					<div class="info">
+						
+						<a class="title" ui-sref="index.{{item.type}}({id: {{item.id}} })">{{item.name}}</a>
+						<p class="desc text-muted">{{item.description}}</p><!--TODO: Create a short description field-->
+						<ul><!--TODO: What the fuck should I put here? -->
+							<li>15 <span class="fa fa-male"></span></li>
+							<li>6<span class="fa fa-child"></span></li>
+							<li>103 <span class="fa fa-globe"></span></li>
+						</ul>
+					</div>
+					<div class="social">
+						<ul>
+							<li class="facebook"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+							<li class="twitter"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+							<li class="google-plus"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+						</ul>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
