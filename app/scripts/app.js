@@ -42,7 +42,7 @@ tinkuApp.config(function($stateProvider, $urlRouterProvider){
     .state('index', {
       views: {
         '@' : {
-          templateUrl: 'views.html',
+          templateUrl: 'views/index.html',
         },
         'navbar@index' : { templateUrl: 'views/navbar-index.tpl.html',},
       }
