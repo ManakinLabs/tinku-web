@@ -26,85 +26,85 @@ tinkuApp.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     //Index/Default
     .state('default', {
-      templateUrl: "partials/default.html"
+      templateUrl: "views/default.html"
     })
     .state('default.index', {
       url: "/",
       views: {
         '@' : {
-          templateUrl: 'partials/index/default.tpl.html',
+          templateUrl: 'views/default.tpl.html',
           controller: 'IndexCtrl as index'
         },
-        'footer@default.index' : { templateUrl: 'partials/core/footer.tpl.html',},
+        'footer@default.index' : { templateUrl: 'views/footer.tpl.html',},
       },
     })
     //Index
     .state('index', {
       views: {
         '@' : {
-          templateUrl: 'partials/index.html',
+          templateUrl: 'views.html',
         },
-        'navbar@index' : { templateUrl: 'partials/core/navbar-index.tpl.html',},
+        'navbar@index' : { templateUrl: 'views/navbar-index.tpl.html',},
       }
     })
     .state('index.about', {
       url: "/about",
-      templateUrl: 'partials/index/about.tpl.html'
+      templateUrl: 'views/about.tpl.html'
 
       // views: {
       //   '@' : {
-      //     templateUrl: 'partials/index/about.tpl.html',    
+      //     templateUrl: 'views/about.tpl.html',    
       //   },
-      //   'footer@index.about' : { templateUrl: 'partials/core/footer.tpl.html',},
+      //   'footer@index.about' : { templateUrl: 'views/footer.tpl.html',},
       // }
     })
     .state('index.login', {
       url: "/login",
-      templateUrl: "partials/index/login.tpl.html"
+      templateUrl: "views/login.tpl.html"
     })
     .state('index.event', {
       url: "/event/:id",
-      templateUrl: "partials/index/event.tpl.html", 
+      templateUrl: "views/event.tpl.html", 
       controller: 'EventCtrl'
     })
     .state('index.events', {
       url: "/events",
-      templateUrl: "partials/index/events.tpl.html", 
+      templateUrl: "views/events.tpl.html", 
       controller: 'EventsCtrl as events'
     })
     .state('index.cause', {
       url: "/cause/:id",
-      templateUrl: "partials/index/cause.tpl.html", 
+      templateUrl: "views/cause.tpl.html", 
       controller: 'CauseCtrl'
     })
     .state('index.causes', {
       url: "/causes",
-      templateUrl: "partials/index/causes.tpl.html", 
+      templateUrl: "views/causes.tpl.html", 
       controller: 'CausesCtrl as causes'
     })
     .state('index.ong', {
       url: "/ong/:id",
-      templateUrl: "partials/index/ong.tpl.html", 
+      templateUrl: "views/ong.tpl.html", 
       controller: 'OngCtrl'
     })
     .state('index.ongs', {
       url: "/ongs",
-      templateUrl: "partials/index/ongs.tpl.html", 
+      templateUrl: "views/ongs.tpl.html", 
       controller: 'OngsCtrl as ongs'
     })
     .state('index.need', {
       url: "/need/:id",
-      templateUrl: "partials/index/need.tpl.html", 
+      templateUrl: "views/need.tpl.html", 
       controller: 'NeedCtrl'
     })
     .state('index.needs', {
       url: "/needs",
-      templateUrl: "partials/index/needs.tpl.html", 
+      templateUrl: "views/needs.tpl.html", 
       controller: 'NeedsCtrl'
     })
     .state('index.search', {
       url: "/search?q",
-      templateUrl: "partials/index/search.tpl.html", 
+      templateUrl: "views/search.tpl.html", 
       controller: 'SearchCtrl as search'
     })
 
@@ -112,17 +112,17 @@ tinkuApp.config(function($stateProvider, $urlRouterProvider){
     //App
     .state('app', {
       url: "/app",
-      templateUrl: "partials/app.html"
+      templateUrl: "views/app.html"
     })
     .state('app.home', {
       url: "/home",
-      templateUrl: "partials/app/home.tpl.html",
+      templateUrl: "views/home.tpl.html",
       controller: 'HomeCtrl'
       //, data: {requiredLogin: true}
     })
     .state('app.profile', {
       url: "/profile",
-      templateUrl: "partials/app/profile.tpl.html"
+      templateUrl: "views/profile.tpl.html"
       //, data: {requiredLogin: true}
     });
     $urlRouterProvider.otherwise("/");
